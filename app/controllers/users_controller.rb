@@ -14,9 +14,22 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_url, notice: "Thank you for signing up!"
+      redirect_to @user, notice: "Thank you for signing up!"
     else
       render :new
+    end
+  end
+
+  def edit
+    @user = User.find(current_user.id)
+  end
+
+  def update
+    @user = User.find(current_user.id)
+    @user.update(user_params)
+    respond_to do |format|
+      format.html {redirect_to :back}
+      format.js
     end
   end
 
