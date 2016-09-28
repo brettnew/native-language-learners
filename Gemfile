@@ -15,7 +15,7 @@ gem 'kaminari'
 gem 'chartkick'
 gem 'groupdate'
 gem 'bcrypt', '~> 3.1.11'
-gem 'pry'
+gem 'record_tag_helper', '~> 1.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri
