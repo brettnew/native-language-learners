@@ -28,6 +28,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'simplecov', require: false
   gem 'poltergeist'
+  gem 'selenium-webdriver'
 end
 
 group :development do
