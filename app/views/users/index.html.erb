@@ -1,5 +1,16 @@
 <h1>Welcome to Language Learning!</h1>
+<h2>Here are some of our featured users:</h2>
+<div class="row">
+  <div class="user-blurbs col-sm-4">
+    <% @users.each do |user| %>
+    <%= image_tag(user.image) %>
+    <h5><%=user.first_name + " | " + user.city + ", " + user.state %></h5>
+    <% end %>
+  </div>
+</div>
+
 
 <% if current_user.nil? %>
-  <h2>Please <%= link_to 'create account', new_user_path %> or <%= link_to 'log in', new_session_path %> to get started!</h2>
+<hr>
+<h4>Please <%= link_to 'create account', new_user_path %> or <%= link_to 'log in', new_session_path %> to get started!</h4>
 <% end %>

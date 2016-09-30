@@ -22,6 +22,12 @@ Check to make sure ruby and rails are installed on your machine.
 $ ruby -v
 $ rails -v
 ```
+
+If you are on a Mac OS X, run in your home directory:
+```
+$ brew install imagemagick
+```
+
 If they are not installed, please follow instructions [here](http://guides.rubyonrails.org/getting_started.html#installing-rails) to install ruby on rails.
 
 Install required gems:
