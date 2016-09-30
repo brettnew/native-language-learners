@@ -19,7 +19,6 @@ gem 'record_tag_helper', '~> 1.0'
 gem 'paperclip', '~> 5.0.0'
 gem 'geocoder'
 gem 'gmaps4rails'
-gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -33,6 +32,7 @@ group :development, :test do
   gem 'simplecov', require: false
   gem 'poltergeist'
   gem 'selenium-webdriver'
+  gem 'dotenv-rails'
 end
 
 group :development do

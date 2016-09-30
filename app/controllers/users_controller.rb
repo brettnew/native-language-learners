@@ -5,6 +5,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(current_user.id)
+    @hash = Gmaps4rails.build_markers(@user) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+    end
   end
 
   def new

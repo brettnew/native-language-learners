@@ -4,7 +4,7 @@
 <% @users.each do |user| %>
   <div class="user-blurbs">
     <div class="user-blurbs-content">
-      <%= image_tag(user.image) %>
+      <%=link_to image_tag(user.image), user_path(user) %>
       <h5><%=user.first_name + " | " + user.city + ", " + user.state %></h5>
     </div>
   </div>
