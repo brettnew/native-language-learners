@@ -16,6 +16,7 @@ gem 'chartkick'
 gem 'groupdate'
 gem 'bcrypt', '~> 3.1.11'
 gem 'record_tag_helper', '~> 1.0'
+gem 'paperclip', '~> 5.0.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri
