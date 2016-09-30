@@ -1,13 +1,15 @@
 <h1>Welcome to Language Learning!</h1>
 <h2>Here are some of our featured users:</h2>
-<div class="row">
-  <div class="user-blurbs col-sm-4">
-    <% @users.each do |user| %>
-    <%= image_tag(user.image) %>
-    <h5><%=user.first_name + " | " + user.city + ", " + user.state %></h5>
-    <% end %>
+
+<% @users.each do |user| %>
+  <div class="user-blurbs">
+    <div class="user-blurbs-content">
+      <%= image_tag(user.image) %>
+      <h5><%=user.first_name + " | " + user.city + ", " + user.state %></h5>
+    </div>
   </div>
-</div>
+<% end %>
+
 
 
 <% if current_user.nil? %>
