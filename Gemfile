@@ -19,6 +19,8 @@ gem 'record_tag_helper', '~> 1.0'
 gem 'paperclip', '~> 5.0.0'
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'simple_form'
+gem 'country_select'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -40,6 +42,7 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'nifty-generators'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

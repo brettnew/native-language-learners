@@ -1,66 +1,9 @@
 <h1>Create Account</h1>
-
-<%= form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div class= "error_messages">
-      <h2>Form is invalid</h2>
-      <ul>
-        <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+<div class="col-sm-6">
+  <% form_for @user do |f| %>
+  <%= f.error_messages %>
+  <%= render "#{@user.current_step}_step", :f => f %>
+  <%= f.submit "Continue", :class => 'btn btn-default' %>
+  <%= f.submit "Back", :class => 'btn btn-default', :name => 'back_button' unless @user.first_step? %>
   <% end %>
-  <div class="col-sm-8">
-    <div class="field">
-      <%= f.label :first_name %> <br>
-      <%= f.text_field :first_name, :class => 'form-control' %>
-    </div>
-    <div class="field">
-      <%= f.label :last_name %> <br>
-      <%= f.text_field :last_name, :class => 'form-control' %>
-    </div>
-    <div class="field">
-      <%= f.label :email %> <br>
-      <%= f.email_field :email, :class => 'form-control' %>
-    </div>
-    <div class="field">
-      <%= f.label :city %> <br>
-      <%= f.text_field :city, :class => 'form-control' %>
-    </div>
-    <div class="field">
-      <%= f.label :state %> <br>
-      <%= f.text_field :state, :class => 'form-control' %>
-    </div>
-    <div class="field">
-      <%= f.label :zipcode %> <br>
-      <%= f.number_field :zipcode, :class => 'form-control' %>
-    </div>
-    <div class="field">
-    <%= f.label :gender, "Gender" %>
-      <%= f.radio_button :gender, "female" %>
-      <%= f.label :female %>
-      <%= f.radio_button :gender, "male" %>
-      <%= f.label :male %>
-      <%= f.radio_button :gender, "other"  %>
-      <%= f.label :other %>
-    </div>
-    <div class="field">
-      <%= f.label :bio %> <br>
-      <%= f.text_area :bio, :class => 'form-control' %>
-    </div>
-    <div class="field">
-      <%= f.label :profile_picture %> <br>
-      <%= f.file_field :image, :class => 'form-control' %>
-    </div>
-    <div class="field">
-      <%= f.label :password %> <br>
-      <%= f.password_field :password, :class => 'form-control' %>
-    </div>
-    <div class="field">
-      <%= f.label :password_confirmation %> <br>
-      <%= f.password_field :password_confirmation, :class => 'form-control' %><br><br>
-      <%= f.submit "Create Account", :class => 'btn btn-success' %>
-    </div>
-  </div>
-<% end %>
+</div>
