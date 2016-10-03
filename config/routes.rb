@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :languages
 
   resources :sessions
+
+  resources :comments
 end

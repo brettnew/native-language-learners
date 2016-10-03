@@ -27,6 +27,7 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to 'About us', comments_path %></li>
             <% if current_user %>
               <li class= "round-image-50"><%= image_tag(current_user.image.url(:thumb))%></li>
               <li><%= link_to current_user.first_name,  user_path(current_user.id)%></li>

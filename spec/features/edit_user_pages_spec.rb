@@ -10,7 +10,7 @@ describe 'the edit user profile path' do
     click_on 'Log In'
     click_on 'Bob'
     click_on 'Edit Profile'
-    fill_in 'first_name', :with => 'Bobby'
+    fill_in 'First name', :with => 'Bobby'
     click_on 'Update Account'
     expect(page).to have_content 'Bobby'
   end

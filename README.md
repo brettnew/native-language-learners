@@ -26,6 +26,7 @@ $ rails -v
 If you are on a Mac OS X, run in your home directory:
 ```
 $ brew install imagemagick
+$ brew install phantomjs
 ```
 
 If they are not installed, please follow instructions [here](http://guides.rubyonrails.org/getting_started.html#installing-rails) to install ruby on rails.

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :load_user
+  # before_action :load_user
   def index
     @users = User.all
   end
@@ -18,26 +18,28 @@ class UsersController < ApplicationController
   end
 
   def create
-    session[:user_params].deep_merge!(params[:user]) if params[:user]
-    @user = User.new(session[:user_params])
-    @user.current_step = session[:user_step]
-    if @user.valid?
-      if params[:back_button]
-        @user.previous_step
-      elsif @user.last_step?
-        @user.save if @user.all_valid?
-      else
-        @user.next_step
-      end
-      session[:user_step] = @user.current_step
-    end
-    if @user.new_record?
-      render "new"
-    else
-      session[:user_step] = session[:user_params] = nil
-      session[:user_id] = @user.id
-      redirect_to @user, notice: "Thank you for signing up!"
-    end
+
+
+  #   session[:user_params].deep_merge!(params[:user]) if params[:user]
+  #   @user = User.new(session[:user_params])
+  #   @user.current_step = session[:user_step]
+  #   if @user.valid?
+  #     if params[:back_button]
+  #       @user.previous_step
+  #     elsif @user.last_step?
+  #       @user.save if @user.all_valid?
+  #     else
+  #       @user.next_step
+  #     end
+  #     session[:user_step] = @user.current_step
+  #   end
+  #   if @user.new_record?
+  #     render "new"
+  #   else
+  #     session[:user_step] = session[:user_params] = nil
+  #     session[:user_id] = @user.id
+  #     redirect_to @user, notice: "Thank you for signing up!"
+  #   end
   end
 
   def edit
