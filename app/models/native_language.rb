@@ -1,5 +1,5 @@
 class NativeLanguage < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :language
+  has_many :users
 
+  validates :name, :presence => true
 end

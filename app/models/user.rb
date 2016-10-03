@@ -7,9 +7,8 @@ class User < ActiveRecord::Base
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/system/images/generic_avatar.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
-  has_many :native_languages
-  has_many :languages, :through => :native_languages
-  accepts_nested_attributes_for :native_languages, :languages
+  belongs_to :native_language
+  has_and_belongs_to_many :learn_languages
 
   # validates :first_name, :last_name, :email, :password_digest, :presence => true
   #

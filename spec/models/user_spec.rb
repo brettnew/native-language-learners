@@ -11,7 +11,7 @@ describe User do
   it { should validate_presence_of :email }
   it { should validate_presence_of :password_digest }
 
-  it { should have_many :native_languages }
-  it { should have_many :languages }
-  
+  it { should belong_to :native_language }
+  it { should have_and_belong_to_many :learn_languages }
+
 end

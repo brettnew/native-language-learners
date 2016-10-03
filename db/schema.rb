@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161003173736) do
+ActiveRecord::Schema.define(version: 20161003174843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 20161003173736) do
   end
 
   create_table "learn_languages_users", id: false, force: :cascade do |t|
-    t.integer "learn_languages_id"
+    t.integer "learn_language_id"
     t.integer "user_id"
-    t.index ["learn_languages_id"], name: "index_learn_languages_users_on_learn_languages_id", using: :btree
+    t.index ["learn_language_id"], name: "index_learn_languages_users_on_learn_language_id", using: :btree
     t.index ["user_id"], name: "index_learn_languages_users_on_user_id", using: :btree
   end
 
