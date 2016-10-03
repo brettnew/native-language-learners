@@ -13,8 +13,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    # @wizard = ModelWizard.new(User, session, params).start
-    # @user = @wizard.object
   end
 
   def create

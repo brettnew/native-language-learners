@@ -1,6 +1,6 @@
-class UserStepsController < ApplicationController
+class Users::BuildController < ApplicationController
   include Wicked::Wizard
-  steps :account, :personal, :native_language, :language
+  steps :account, :personal
 
   def show
     @user = current_user
@@ -18,8 +18,7 @@ class UserStepsController < ApplicationController
     params.require(:user).permit(:email, :first_name, :last_name, :city, :state, :zipcode, :bio, :gender, :password, :password_confirmation, :image)
   end
 
-  def redirect_to_finish_wizard
-    @user = current_user
-    redirect_to user_path(@user), notice: "Thank you for signing up!"
+  def redirect_to_finish_wizard(options = nil)
+    redirect_to edit_native_language_path , notice: "Thank you for signing up!"
   end
 end

@@ -1,0 +1,5 @@
+<h4>Which is your native language?</h4>
+<%= simple_form_for @user do |f| %>
+  <%= f.association :native_language, as: :radio_buttons %>
+  <%= f.button :submit, "Next", class: "btn btn-default" %>
+<% end %>

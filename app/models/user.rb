@@ -14,12 +14,6 @@ class User < ActiveRecord::Base
   #
   # validates :city, :state, :zipcode, :bio, :gender
 
-  # validates_presence_of :first_name, :last_name, :email, :password_digest, :if => lambda { |o| o.current_step == "initial_info" }
-  # validates_presence_of :city, :state, :zipcode, :bio, :gender, :if => lambda { |o| o.current_step =="about_you"}
-
-  # validates :first_name, :last_name, :email, :password_digest, presence: true, if: :step1?
-  # validates :city, :state, :zipcode, :bio, :gender, presence: true, if: :step2?
-
   validates_uniqueness_of :email
 
 end

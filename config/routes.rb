@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   resources :user_steps
 
-  resources :languages
+  resources :learn_languages
+
+  resources :native_languages
 
   resources :sessions
 
