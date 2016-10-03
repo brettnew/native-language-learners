@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161003024434) do
+ActiveRecord::Schema.define(version: 20161003173736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,16 +22,19 @@ ActiveRecord::Schema.define(version: 20161003024434) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "languages", force: :cascade do |t|
+  create_table "learn_languages", force: :cascade do |t|
     t.string "name"
   end
 
-  create_table "native_languages", force: :cascade do |t|
+  create_table "learn_languages_users", id: false, force: :cascade do |t|
+    t.integer "learn_languages_id"
     t.integer "user_id"
-    t.integer "language_id"
-    t.string  "proficiency"
-    t.index ["language_id"], name: "index_native_languages_on_language_id", using: :btree
-    t.index ["user_id"], name: "index_native_languages_on_user_id", using: :btree
+    t.index ["learn_languages_id"], name: "index_learn_languages_users_on_learn_languages_id", using: :btree
+    t.index ["user_id"], name: "index_learn_languages_users_on_user_id", using: :btree
+  end
+
+  create_table "native_languages", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,6 +55,7 @@ ActiveRecord::Schema.define(version: 20161003024434) do
     t.datetime "image_updated_at"
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "native_language_id"
   end
 
 end

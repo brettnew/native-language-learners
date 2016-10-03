@@ -22,6 +22,8 @@ gem 'gmaps4rails'
 gem 'simple_form'
 gem 'country_select'
 gem 'wicked'
+gem 'reform'
+gem 'reform-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri

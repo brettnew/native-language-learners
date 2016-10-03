@@ -11,7 +11,9 @@ class User < ActiveRecord::Base
   has_many :languages, :through => :native_languages
   accepts_nested_attributes_for :native_languages, :languages
 
-  # validates :first_name, :last_name, :city, :state, :zipcode, :bio, :gender, :email, :password_digest, :presence => true
+  # validates :first_name, :last_name, :email, :password_digest, :presence => true
+  #
+  # validates :city, :state, :zipcode, :bio, :gender
 
   # validates_presence_of :first_name, :last_name, :email, :password_digest, :if => lambda { |o| o.current_step == "initial_info" }
   # validates_presence_of :city, :state, :zipcode, :bio, :gender, :if => lambda { |o| o.current_step =="about_you"}
@@ -21,9 +23,4 @@ class User < ActiveRecord::Base
 
   validates_uniqueness_of :email
 
-  include MultiStepModel
-
-  def self.total_steps
-    2
-  end
 end

@@ -1,6 +1,6 @@
 class UserStepsController < ApplicationController
   include Wicked::Wizard
-  steps :account, :personal
+  steps :account, :personal, :native_language, :language
 
   def show
     @user = current_user
@@ -21,4 +21,5 @@ class UserStepsController < ApplicationController
   def redirect_to_finish_wizard
     @user = current_user
     redirect_to user_path(@user), notice: "Thank you for signing up!"
+  end
 end

@@ -81,7 +81,13 @@ GEM
     currencies (0.4.2)
     database_cleaner (1.5.3)
     debug_inspector (0.0.2)
+    declarative (0.0.8)
+      uber (>= 0.0.15)
     diff-lcs (1.2.5)
+    disposable (0.3.2)
+      declarative (>= 0.0.8, < 1.0.0)
+      representable (>= 2.4.0, <= 3.1.0)
+      uber
     docile (1.1.5)
     dotenv (2.1.1)
     dotenv-rails (2.1.1)
@@ -185,6 +191,16 @@ GEM
       ffi (>= 0.5.0)
     record_tag_helper (1.0.0)
       actionview (~> 5.x)
+    reform (2.2.1)
+      disposable (>= 0.3.0, < 0.4.0)
+      representable (>= 2.4.0, < 3.1.0)
+      uber (~> 0.0.11)
+    reform-rails (0.1.7)
+      activemodel (>= 3.2)
+      reform (>= 2.2.0)
+    representable (3.0.0)
+      declarative (~> 0.0.5)
+      uber (~> 0.0.15)
     rspec-core (3.5.3)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -246,6 +262,7 @@ GEM
     turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    uber (0.0.15)
     uglifier (3.0.2)
       execjs (>= 0.3.0, < 3)
     unicode_utils (1.4.0)
@@ -293,6 +310,8 @@ DEPENDENCIES
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
   record_tag_helper (~> 1.0)
+  reform
+  reform-rails
   rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver
