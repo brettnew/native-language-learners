@@ -1,0 +1,35 @@
+<%= form_for @user, url: wizard_path do |f| %>
+<% if @user.errors.any? %>
+  <div class= "error_messages">
+    <h2>Form is invalid</h2>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+  <div class="field">
+    <%= f.label :city %> <br>
+    <%= f.text_field :city, :class => 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :state %> <br>
+    <%= f.text_field :state, :class => 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :zipcode %> <br>
+    <%= f.number_field :zipcode, :class => 'form-control' %>
+  </div><br>
+  <div class="field">
+  <%= f.label :gender, "Gender:" %>
+    <%= f.radio_button :gender, "female" %>
+    <%= f.label :female %>
+    <%= f.radio_button :gender, "male" %>
+    <%= f.label :male %>
+    <%= f.radio_button :gender, "other"  %>
+    <%= f.label :other %>
+  </div>
+  <br>
+  <%= f.submit "Continue", :class => 'btn btn-default' %>
+<% end %>

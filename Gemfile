@@ -21,6 +21,7 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'simple_form'
 gem 'country_select'
+gem 'wicked'
 
 group :development, :test do
   gem 'byebug', platform: :mri

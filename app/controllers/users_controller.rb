@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  # before_action :load_user
   def index
     @users = User.all
   end
@@ -13,13 +12,19 @@ class UsersController < ApplicationController
   end
 
   def new
-    @wizard = ModelWizard.new(User, session, params).start
-    @user = @wizard.object
+    @user = User.new
+    # @wizard = ModelWizard.new(User, session, params).start
+    # @user = @wizard.object
   end
 
   def create
-
-
+    @user = User.new(user_params)
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to user_steps_path
+    else
+      render :new
+    end
   #   session[:user_params].deep_merge!(params[:user]) if params[:user]
   #   @user = User.new(session[:user_params])
   #   @user.current_step = session[:user_step]
