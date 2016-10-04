@@ -10,9 +10,7 @@ class User < ActiveRecord::Base
   belongs_to :native_language
   has_and_belongs_to_many :learn_languages
 
-  # validates :first_name, :last_name, :email, :password_digest, :presence => true
-  #
-  # validates :city, :state, :zipcode, :bio, :gender
+  validates :first_name, :last_name, :email, :password_digest, :presence => true
 
   validates_uniqueness_of :email
 

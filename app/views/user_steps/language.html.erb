@@ -1,5 +1,5 @@
 <h4>Which language(s) would you like to learn?</h4>
-<%= simple_form_for @user do |f| %>
+<%= simple_form_for @user, url: wizard_path do |f| %>
   <%= f.association :learn_languages, as: :check_boxes %>
   <%= f.button :submit, "Finish", class: "btn btn-default" %>
 <% end %>

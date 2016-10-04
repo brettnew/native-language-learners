@@ -1,1 +1,15 @@
-
+<h4>Which is your native language?</h4>
+<%= simple_form_for @user, url: wizard_path do |f| %>
+<% if @user.errors.any? %>
+  <div class= "error_messages">
+    <h2>Form is invalid</h2>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <%= f.association :native_language, as: :radio_buttons %>
+  <%= f.button :submit, "Next", class: "btn btn-default" %>
+<% end %>

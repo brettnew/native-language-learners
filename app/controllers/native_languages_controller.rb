@@ -5,7 +5,9 @@ class NativeLanguagesController < ApplicationController
   end
 
   def update
-end
+    @user = User.find(current_user.id)
+    @native_language = params
+  end
 
 private
   def native_language_params
