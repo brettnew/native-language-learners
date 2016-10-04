@@ -4,13 +4,11 @@ class UserStepsController < ApplicationController
 
   def show
     @user = current_user
-    binding.pry
     render_wizard
   end
 
   def update
     @user = current_user
-    binding.pry
     @user.attributes = (user_params)
     render_wizard @user
   end
