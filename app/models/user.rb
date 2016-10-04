@@ -10,8 +10,13 @@ class User < ActiveRecord::Base
   belongs_to :native_language
   has_and_belongs_to_many :learn_languages
 
-  validates :first_name, :last_name, :email, :password_digest, :presence => true
+  validates :first_name, :last_name, :email, :password_digest, :city, :state, :zipcode, :bio, :gender, :presence => true
 
   validates_uniqueness_of :email
+
+
+  def active?
+    status == 'active'
+  end
 
 end

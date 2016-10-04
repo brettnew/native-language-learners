@@ -9,6 +9,7 @@ class UserStepsController < ApplicationController
 
   def update
     @user = current_user
+    user_params[:status] = 'active' if step == steps.last
     @user.attributes = (user_params)
     render_wizard @user
   end
