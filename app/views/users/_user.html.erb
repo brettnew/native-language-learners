@@ -1,5 +1,8 @@
 <%= div_for @user do %>
+  <div class="individual-profile-pic-div">
+    <%= image_tag(@user.image, class: "individual-profile-pic")%>
+  </div>
   <h3><%= @user.first_name + " " + @user.last_name + " | " + @user.city + ", " + @user.state %> </h3>
   <p><%= @user.bio %></p>
-  <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-success", remote: true%>
+  <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-default", remote: true%>
 <% end %>
