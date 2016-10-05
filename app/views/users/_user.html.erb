@@ -5,11 +5,11 @@
   <h3><%= @user.first_name + " " + @user.last_name + " | " + @user.city + ", " + @user.state %> </h3>
   <p><%= @user.bio %></p>
   <h5><%= @user.first_name%> speaks <strong><%= @user.native_language.name %></strong> </h5>
-  <h5><%= @user.first_name%> would like to practice:
+  <h5><%= @user.first_name%> would like to practice:</h5>
   <ul>
     <% @user.learn_languages.each do |language| %>
     <li><%= language.name %></li>
     <% end %>
-  </ul> </h5>
+  </ul> 
   <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-default", remote: true%>
 <% end %>

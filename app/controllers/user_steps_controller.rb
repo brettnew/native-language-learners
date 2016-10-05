@@ -9,6 +9,7 @@ class UserStepsController < ApplicationController
 
   def update
     @user = current_user
+    user_params[:status] = step
     user_params[:status] = 'active' if step == steps.last
     @user.attributes = (user_params)
     render_wizard @user
@@ -16,7 +17,7 @@ class UserStepsController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:email, :first_name, :last_name, :city, :state, :zipcode, :bio, :gender, :password, :password_confirmation, :image, :native_language_id, :learn_language_ids => [])
+    params.require(:user).permit(:email, :first_name, :last_name, :city, :state, :zipcode, :bio, :gender, :password, :password_confirmation, :image, :status, :native_language_id, :learn_language_ids => [])
   end
 
   def redirect_to_finish_wizard(options = nil)
