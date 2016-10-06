@@ -1,13 +1,10 @@
-<div class="col-sm-6" id="current_user_profile_page">
-  <%= render @user %>
-  <%= link_to "See your matches", recommended_users_path %>
+<div class="col-sm-6" id="recommended_user_profile_page">
+  <%= render "users/user" %>
   <div id="map-container">
     <div id="map-canvas">
 
     </div>
   </div>
-  <br>
-  <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-default", remote: true%>
 </div>
 
 <script type="text/javascript">

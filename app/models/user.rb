@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :learn_languages
 
   validates :first_name, :last_name, :email, :password_digest, :presence => true
-  # 
+  #
   # validates :city, :presence => true, :if => :active_or_city?
   # validates :state, :presence => true, :if => :active_or_state?
   # validates :zipcode, :presence => true, :if => :active_or_zipcode?
@@ -45,5 +45,8 @@ class User < ActiveRecord::Base
   #   status.include?('gender') || active?
   # end
 
+  def self.all_except(user)
+    where.not(id: user)
+  end
 
 end

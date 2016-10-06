@@ -1,0 +1,18 @@
+<h1>Welcome to Language Learning!</h1>
+<h2>Here are some of our featured users:</h2>
+
+<% @users.each do |user| %>
+  <div class="user-blurbs">
+    <div class="user-blurbs-content">
+      <%=link_to image_tag(user.image.url(:medium)), featured_user_path(user) %>
+      <h5><%=user.first_name + " | " + user.city + ", " + user.state %></h5>
+    </div>
+  </div>
+<% end %>
+
+
+
+<% if current_user.nil? %>
+<hr>
+<h4>Please <%= link_to 'create account', new_user_path %> or <%= link_to 'log in', new_session_path %> to get started!</h4>
+<% end %>

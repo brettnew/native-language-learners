@@ -1,7 +1,6 @@
-class RecommendedUsersController < ApplicationController
+class FeaturedUsersController < ApplicationController
   def index
-    @user = User.find(current_user.id)
-    @users = User.all_except(current_user)
+    @users = User.all
   end
 
   def show

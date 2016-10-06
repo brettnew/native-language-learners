@@ -4,11 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if current_user
-      @user = User.find(current_user.id)
-    else
-      @user = User.find(params[:id])
-    end
+    @user = User.find(current_user.id)
     @hash = Gmaps4rails.build_markers(@user) do |user, marker|
       marker.lat user.latitude
       marker.lng user.longitude

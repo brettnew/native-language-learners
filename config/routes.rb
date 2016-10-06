@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root :to => 'recommended_users#index'
+  root :to => 'featured_users#index'
 
   resources :users
 
@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   resources :comments
 
   resources :recommended_users
+
+  resources :featured_users
 end
