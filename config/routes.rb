@@ -16,4 +16,8 @@ Rails.application.routes.draw do
   resources :recommended_users
 
   resources :featured_users
+
+  resources :conversations do
+    resources :messages
+  end
 end
