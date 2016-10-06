@@ -10,6 +10,5 @@
     <% @user.learn_languages.each do |language| %>
     <li><%= language.name %></li>
     <% end %>
-  </ul> 
-  <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-default", remote: true%>
+  </ul>
 <% end %>

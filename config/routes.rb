@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root :to => 'users#index'
+  root :to => 'recommended_users#index'
 
   resources :users
 
@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   resources :sessions
 
   resources :comments
+
+  resources :recommended_users
 end
