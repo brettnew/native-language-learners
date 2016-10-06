@@ -24,6 +24,7 @@ gem 'country_select'
 gem 'wicked'
 gem 'reform'
 gem 'reform-rails'
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 
 group :development, :test do
   gem 'byebug', platform: :mri
