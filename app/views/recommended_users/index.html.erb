@@ -1,9 +1,9 @@
+<h1>Your Matches: </h1>
 <% @users.each do |user| %>
   <% user.learn_languages.each do |recommended_user_learn| %>
     <% @user.learn_languages.each do |current_user_learn| %>
       <% if @user.native_language.name == recommended_user_learn.name && current_user_learn.name == user.native_language.name %>
-      <div class="recommended_user_div">
-        <h1>Your Matches: </h1>
+      <div class="recommended_user_div col-sm-4">
         <%=link_to image_tag(user.image.url(:medium)), recommended_user_path(user) %>
         <h4><%= user.first_name %></h4>
       </div>

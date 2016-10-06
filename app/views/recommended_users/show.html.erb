@@ -1,5 +1,6 @@
 <div class="col-sm-6" id="recommended_user_profile_page">
   <%= render "users/user" %>
+  <h4>Send <%= mail_to @user.email, "#{@user.first_name}" %> an email to meet up and practice your language skills!</h4>
   <div id="map-container">
     <div id="map-canvas">
 

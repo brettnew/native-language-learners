@@ -1,6 +1,6 @@
 class FeaturedUsersController < ApplicationController
   def index
-    @users = User.all
+    @users = User.limit(9)
   end
 
   def show
