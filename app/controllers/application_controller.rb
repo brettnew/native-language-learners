@@ -10,4 +10,6 @@ class ApplicationController < ActionController::Base
   def authorize
     redirect_to new_session_path, alert: "Not authorized" if current_user.nil?
   end
+
+  helper_method :authorize
 end

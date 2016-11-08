@@ -1,9 +1,8 @@
 <div class="col-sm-6" id="recommended_user_profile_page">
   <%= render "users/user" %>
-  <h4>Send <%= mail_to @user.email, "#{@user.first_name}" %> an email to meet up and practice your language skills!</h4>
+  <h4>Send <%= mail_to @user.email, "#{@user.first_name}" %> an email or a <%=link_to "message", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: "post" %> to meet up and practice your language skills!</h4>
   <div id="map-container">
     <div id="map-canvas">
-
     </div>
   </div>
 </div>

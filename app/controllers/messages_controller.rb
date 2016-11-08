@@ -15,10 +15,11 @@ class MessagesController < ApplicationController
     end
     if @messages.last
       if @messages.last.user_id != current_user.id
-        @messages.last.read = true
+        @messages.last.read = true;
       end
     end
-    @messages = @conversation.messages.new
+
+    @message = @conversation.messages.new
   end
 
   def new
@@ -35,4 +36,5 @@ class MessagesController < ApplicationController
 private
   def message_params
     params.require(:message).permit(:body, :user_id)
+  end
 end

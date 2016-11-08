@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
   belongs_to :native_language
   has_and_belongs_to_many :learn_languages
+  has_many :conversations, :foreign_key => :sender_id
 
   validates :first_name, :last_name, :email, :password_digest, :presence => true
   #

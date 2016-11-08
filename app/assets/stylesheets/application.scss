@@ -1,7 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "semantic-ui";
-@import "semantic-ui/collections/menu";
+
 
 .round-image-50 {
   background-color: white;
@@ -54,4 +53,8 @@
 .individual-profile-pic {
   height: 80%;
   width: 400px;
+}
+
+.email, .password {
+  width: 30%;
 }
