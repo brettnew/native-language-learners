@@ -10,9 +10,7 @@
   </div>
 <% end %>
 
-
-
 <% if current_user.nil? %>
-<hr>
-<h4>Please <%= link_to 'create account', new_user_path %> or <%= link_to 'log in', new_session_path %> to get started!</h4>
+  <hr>
+  <h4>Please <%= link_to 'create account', new_user_path %> or <%= link_to 'log in', new_session_path %> to get started!</h4>
 <% end %>

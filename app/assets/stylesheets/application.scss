@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$btn-background-color: #0d60ba;
 
 .round-image-50 {
   background-color: white;
@@ -17,11 +18,9 @@
 #map-container {
   height: 400px;
   border-radius: 16px 16px;
-  border-color: #ffffff;
-  border-style: solid;
+  border: 7px solid #ffffff;
   box-shadow: 2px 2px 10px #b1b1b1;
   margin-top: 25px;
-  border-width: 7px;
 }
 
 #map-canvas {
@@ -57,4 +56,14 @@
 
 .email, .password {
   width: 30%;
+}
+
+.btn-default {
+  background-color: $btn-background-color;
+  border: none;
+  color: #ffffff;
+}
+
+ul {
+  list-style: none;
 }

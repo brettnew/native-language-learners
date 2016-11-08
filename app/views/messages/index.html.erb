@@ -19,15 +19,15 @@
       </div>
     <% end %>
   <% end %>
-</div>
+</div><br>
 
 <%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
   <div class="field">
-    <%= f.text_area :body, class: "form-control" %>
+    <%= f.text_area :body, class: "form-control messsage", rows: 5 %>
   </div>
     <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
-  <div>
-    <%= f.submit "Add Reply", class: "ui blue labeled submit icon button" %>
+  <div><br>
+    <%= f.submit "Send", class: "btn btn-default" %>
   </div>
 
 <% end %>
