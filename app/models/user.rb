@@ -12,39 +12,8 @@ class User < ActiveRecord::Base
   has_many :conversations, :foreign_key => :sender_id
 
   validates :first_name, :last_name, :email, :password_digest, :presence => true
-  #
-  # validates :city, :presence => true, :if => :active_or_city?
-  # validates :state, :presence => true, :if => :active_or_state?
-  # validates :zipcode, :presence => true, :if => :active_or_zipcode?
-  # validates :bio, :presence => true, :if => :active_or_bio?
-  # validates :gender, :presence => true, :if => :active_or_gender?
 
   validates_uniqueness_of :email
-
-  #
-  # def active?
-  #   status == 'active'
-  # end
-  #
-  # def active_or_city?
-  #   status.include?('city') || active?
-  # end
-  #
-  # def active_or_state?
-  #   status.include?('state') || active?
-  # end
-  #
-  # def active_or_zipcode?
-  #   status.include?('zipcode') || active?
-  # end
-  #
-  # def active_or_bio?
-  #   status.include?('bio') || active?
-  # end
-  #
-  # def active_or_gender?
-  #   status.include?('gender') || active?
-  # end
 
   def self.all_except(user)
     where.not(id: user)

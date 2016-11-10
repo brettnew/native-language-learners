@@ -43,7 +43,7 @@ $ postgres
 
 Navigate to project file and migrate database:
 ```
-$ rake db: create db:migrate db:seed
+$ rake db:create db:migrate db:seed
 ```
 
 Start the Rails webserver:
